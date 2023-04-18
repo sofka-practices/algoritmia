@@ -1,0 +1,64 @@
+site_name: Taller de algoritmia
+copyright: Copyright &copy; 2023 - Sofka
+repo_url: https://github.com/sofka-practices/algoritmia/
+repo_name: GitHub
+site_url: https://sofka-practices.github.io/algoritmia/
+edit_uri: edit/main/docs/
+nav:
+    - "Preguntas de repaso": 'preguntas.md'
+    - "Teoría general": 'teoria.md'
+    - 'Ejercicio y resultados':
+        - "Abril 24": '24.md'
+        - "Abril 25": '25.md'
+        - "Abril 26": '26.md'
+        - "Abril 27": '27.md'
+        - "Abril 28": '28.md'
+        - "Mayo 02": '02.md'
+        - "Mayo 03": '03.md'
+        - "Mayo 04": '04.md'
+        - "Mayo 05": '05.md'
+theme:
+  language: es
+  name: material
+  logo: assets/logo.png
+  icon:
+    repo: fontawesome/brands/git-alt
+    edit: material/pencil 
+    view: material/eye
+  font:
+    code: Roboto Mono
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+
+    
+  features:
+    - navigation.indexes
+    - navigation.footer
+    - header.autohide
+    - content.code.annotate 
+    - content.code.select
+    - content.code.copy
+    - content.action.edit
+    - search.share
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+plugins:
+  - tags
+extra:
+  version:
+    provider: mike
