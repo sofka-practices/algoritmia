@@ -1,0 +1,690 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sofka-practices.github.io/algoritmia/dia/24/">
+      
+      
+        <link rel="prev" href="../../teoria/">
+      
+      
+        <link rel="next" href="../25/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
+    
+    
+      
+        <title>Abril 24 - Taller de algoritmia</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.240905d7.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#knapsack-problem" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Taller de algoritmia" class="md-header__button md-logo" aria-label="Taller de algoritmia" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Taller de algoritmia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Abril 24
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sofka-practices/algoritmia/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Taller de algoritmia" class="md-nav__button md-logo" aria-label="Taller de algoritmia" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Taller de algoritmia
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sofka-practices/algoritmia/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preguntas/" class="md-nav__link">
+        Preguntas de repaso
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/" class="md-nav__link">
+        Teoría general
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Ejercicio y resultados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ejercicio y resultados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Abril 24
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Abril 24
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#24-de-abril" class="md-nav__link">
+    24 de Abril
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caso-practico" class="md-nav__link">
+    Caso practico
+  </a>
+  
+    <nav class="md-nav" aria-label="Caso practico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solucion-con-el-algoritmo-voraz" class="md-nav__link">
+    Solución con el algoritmo voraz:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25/" class="md-nav__link">
+        Abril 25
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26/" class="md-nav__link">
+        Abril 26
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27/" class="md-nav__link">
+        Abril 27
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28/" class="md-nav__link">
+        Abril 28
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02.md" class="md-nav__link">
+        Mayo 02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03.md" class="md-nav__link">
+        Mayo 03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04.md" class="md-nav__link">
+        Mayo 04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05.md" class="md-nav__link">
+        Mayo 05
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#24-de-abril" class="md-nav__link">
+    24 de Abril
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caso-practico" class="md-nav__link">
+    Caso practico
+  </a>
+  
+    <nav class="md-nav" aria-label="Caso practico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solucion-con-el-algoritmo-voraz" class="md-nav__link">
+    Solución con el algoritmo voraz:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+    <a href="https://github.com/sofka-practices/algoritmia/edit/main/docs/dia/24.md" title="Editar esta página" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="knapsack-problem">Knapsack Problem</h1>
+<h2 id="24-de-abril">24 de Abril</h2>
+<p>El problema de la mochila, también conocido como "Knapsack Problem" en inglés, es un problema de optimización combinatoria clásico en ciencias de la computación y matemáticas. El objetivo es determinar el conjunto de ítems más valiosos que se pueden colocar en una mochila con una capacidad de peso limitada. Cada ítem tiene un valor y un peso asociados, y el objetivo es maximizar el valor total de los ítems en la mochila sin superar el límite de peso.</p>
+<p>Existen varias variantes del problema de la mochila, pero la versión más conocida es el "0/1 Knapsack Problem", donde cada ítem solo puede ser tomado una vez o no tomado en absoluto (no se permiten fracciones de ítems). Este problema es NP-completo, lo que significa que no se conoce un algoritmo eficiente que lo resuelva de manera exacta en todos los casos.</p>
+<p>Aunque no hay un algoritmo eficiente que garantice una solución óptima para todos los casos, hay varias estrategias que se utilizan para abordar el problema de la mochila, incluidas las siguientes:</p>
+<ol>
+<li>
+<p><strong>Fuerza bruta:</strong> Enumerar todas las combinaciones posibles de ítems y seleccionar la mejor. Este enfoque tiene una complejidad exponencial y, por lo tanto, no es eficiente para problemas de gran tamaño.</p>
+</li>
+<li>
+<p><strong>Algoritmo voraz:</strong> Seleccionar ítems en función de una relación valor/peso en orden descendente, tomando siempre el ítem con la mayor relación disponible hasta que la mochila esté llena o no se puedan agregar más ítems. Este enfoque es rápido pero no siempre produce la solución óptima.</p>
+</li>
+<li>
+<p><strong>Programación dinámica:</strong> Utiliza una tabla para almacenar soluciones parciales y construir la solución óptima a partir de ellas. El algoritmo de programación dinámica es más eficiente que la fuerza bruta para problemas de tamaño moderado, pero su complejidad sigue siendo alta para problemas muy grandes.</p>
+</li>
+<li>
+<p><strong>Metaheurísticas:</strong> Son algoritmos de optimización estocástica, como el algoritmo genético, la optimización por enjambre de partículas o el recocido simulado, que pueden proporcionar soluciones aproximadas en un tiempo razonable para problemas de gran tamaño. Estos métodos no garantizan la optimalidad, pero pueden ofrecer soluciones de alta calidad en muchos casos.</p>
+</li>
+</ol>
+<p>El problema de la mochila tiene aplicaciones en diversos campos, como la planificación de recursos, la optimización de inversiones y la toma de decisiones bajo restricciones limitantes.</p>
+<h2 id="caso-practico">Caso practico</h2>
+<p><strong>Enunciado práctico</strong>: Planificación de un viaje de campamento con restricciones de espacio en la mochila</p>
+<p><strong>Escenario hipotético</strong>: Eres un aventurero que planea realizar un viaje de campamento de tres días en una montaña. Tienes una mochila con una capacidad limitada de peso de 15 kg. Para asegurar un viaje exitoso, tienes que llevar ciertos ítems contigo, pero debido al límite de peso, debes seleccionar cuidadosamente qué ítems llevar.</p>
+<p>Tienes una lista de 6 ítems con sus respectivos pesos y valores de utilidad:</p>
+<ul>
+<li>Tienda de campaña: peso = 4 kg, utilidad = 50</li>
+<li>Saco de dormir: peso = 3 kg, utilidad = 40</li>
+<li>Botiquín de primeros auxilios: peso = 2 kg, utilidad = 30</li>
+<li>Linterna: peso = 1 kg, utilidad = 15</li>
+<li>Cantimplora: peso = 3 kg, utilidad = 20</li>
+<li>Comida: peso = 5 kg, utilidad = 45</li>
+</ul>
+<p>El valor de utilidad representa cuán importante es el ítem para tu viaje de campamento, siendo valores más altos más importantes. Usando el algoritmo del problema de la mochila, determina qué ítems debes llevar en tu mochila para maximizar la utilidad total sin exceder la capacidad de peso de 15 kg.</p>
+<h3 id="solucion-con-el-algoritmo-voraz">Solución con el algoritmo voraz:</h3>
+<p>Primero, calculamos la relación utilidad/peso para cada ítem:</p>
+<ul>
+<li>Tienda de campaña: 50/4 = 12.5</li>
+<li>Saco de dormir: 40/3 ≈ 13.33</li>
+<li>Botiquín de primeros auxilios: 30/2 = 15</li>
+<li>Linterna: 15/1 = 15</li>
+<li>Cantimplora: 20/3 ≈ 6.67</li>
+<li>Comida: 45/5 = 9</li>
+</ul>
+<p>Ordenamos los ítems según la relación utilidad/peso en orden descendente:</p>
+<ul>
+<li>Botiquín de primeros auxilios</li>
+<li>Linterna</li>
+<li>Saco de dormir</li>
+<li>Tienda de campaña</li>
+<li>Comida</li>
+<li>Cantimplora</li>
+</ul>
+<p>Seleccionamos los ítems en orden hasta que no podamos agregar más sin exceder la capacidad de peso de la mochila:</p>
+<ul>
+<li>Botiquín de primeros auxilios (peso actual: 2 kg, utilidad actual: 30)</li>
+<li>Linterna (peso actual: 3 kg, utilidad actual: 45)</li>
+<li>Saco de dormir (peso actual: 6 kg, utilidad actual: 85)</li>
+<li>Tienda de campaña (peso actual: 10 kg, utilidad actual: 135)</li>
+<li>Comida (peso actual: 15 kg, utilidad actual: 180)</li>
+</ul>
+<p>En este caso, la mochila óptima incluye todos los ítems excepto la cantimplora, alcanzando una utilidad total de 180 sin exceder el límite de peso de 15 kg.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../../teoria/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Teoría general" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Anterior
+                </span>
+                Teoría general
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../25/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Abril 25" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Siguiente
+                </span>
+                Abril 25
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - Sofka
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.footer", "header.autohide", "content.code.annotate", "content.code.select", "content.code.copy", "content.action.edit", "search.share"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
+      
+    
+  </body>
+</html>
