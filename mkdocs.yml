@@ -8,15 +8,15 @@ nav:
     - "Preguntas de repaso": 'preguntas.md'
     - "Teoría general": 'teoria.md'
     - 'Ejercicio y resultados':
-        - "Abril 24": '24.md'
-        - "Abril 25": '25.md'
-        - "Abril 26": '26.md'
-        - "Abril 27": '27.md'
-        - "Abril 28": '28.md'
-        - "Mayo 02": '02.md'
-        - "Mayo 03": '03.md'
-        - "Mayo 04": '04.md'
-        - "Mayo 05": '05.md'
+        - "Abril 24": 'dia/24.md'
+        - "Abril 25": 'dia/25.md'
+        - "Abril 26": 'dia/26.md'
+        - "Abril 27": 'dia/27.md'
+        - "Abril 28": 'dia/28.md'
+        - "Mayo 02": 'dia/02.md'
+        - "Mayo 03": 'dia/03.md'
+        - "Mayo 04": 'dia/04.md'
+        - "Mayo 05": 'dia/05.md'
 theme:
   language: es
   name: material
