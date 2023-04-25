@@ -350,11 +350,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#caso" class="md-nav__link">
-    Caso
+  <a href="#27-de-abril" class="md-nav__link">
+    27 de Abril
   </a>
   
-    <nav class="md-nav" aria-label="Caso">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caso-practico" class="md-nav__link">
+    Caso practico
+  </a>
+  
+    <nav class="md-nav" aria-label="Caso practico">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -488,11 +495,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#caso" class="md-nav__link">
-    Caso
+  <a href="#27-de-abril" class="md-nav__link">
+    27 de Abril
   </a>
   
-    <nav class="md-nav" aria-label="Caso">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caso-practico" class="md-nav__link">
+    Caso practico
+  </a>
+  
+    <nav class="md-nav" aria-label="Caso practico">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -541,12 +555,13 @@
 
 
 <h1 id="knuth-morris-pratt">Knuth-Morris-Pratt</h1>
+<h2 id="27-de-abril">27 de Abril</h2>
 <p>El algoritmo de Knuth-Morris-Pratt (KMP) es un algoritmo de búsqueda de patrones en una cadena de texto. Este algoritmo se utiliza para buscar todas las ocurrencias de un patrón específico en una cadena de texto.</p>
 <p>El algoritmo de KMP utiliza una tabla de prefijo para evitar volver a comprobar subcadenas que ya se han comprobado. La tabla de prefijo se construye de tal manera que, para cada posición en la cadena de texto, la tabla almacena la longitud del sufijo más largo de la subcadena que es también un prefijo de la subcadena.</p>
 <p>El algoritmo de KMP luego utiliza esta tabla de prefijo para evitar volver a comprobar subcadenas que ya se han comprobado. En lugar de volver a comprobar la subcadena completa, el algoritmo salta a la posición de la siguiente subcadena que no ha sido comprobada.</p>
 <p>La complejidad del algoritmo de KMP es O(n + m), donde n es el tamaño de la cadena de texto y m es el tamaño del patrón buscado. El algoritmo de KMP es mucho más eficiente que la búsqueda de patrones de fuerza bruta, que tiene una complejidad de O(n * m).</p>
 <p>En resumen, el algoritmo de Knuth-Morris-Pratt es una técnica eficiente para buscar patrones en una cadena de texto, y se basa en la utilización de una tabla de prefijo para evitar la revisión de subcadenas que ya han sido comprobadas.</p>
-<h2 id="caso">Caso</h2>
+<h2 id="caso-practico">Caso practico</h2>
 <p><strong>Enunciado práctico:</strong> Supongamos que trabajas en una empresa de análisis de datos y debes desarrollar una función que busque patrones específicos en una gran cantidad de datos no estructurados. </p>
 <p><strong>Escenario hipotético:</strong> La empresa tiene una base de datos de miles de documentos que contienen información de clientes, proveedores, productos y otros detalles importantes para la empresa. Tu tarea es desarrollar una función que busque patrones específicos en estos documentos para identificar posibles riesgos o oportunidades de negocio. Por ejemplo, se te pide buscar el patrón "fraude" en todos los documentos de la base de datos.</p>
 <p>Para resolver esta tarea, puedes implementar el algoritmo de Knuth-Morris-Pratt para buscar el patrón "fraude" en cada documento de la base de datos. El algoritmo de KMP te permitirá buscar el patrón de manera eficiente y con una complejidad de O(n + m), donde n es el tamaño del documento y m es el tamaño del patrón. Con la implementación del algoritmo de KMP, podrás identificar rápidamente los documentos que contienen el patrón "fraude" y tomar las medidas necesarias para mitigar los riesgos.</p>
