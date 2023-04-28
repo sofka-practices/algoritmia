@@ -383,6 +383,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#solucion-programada" class="md-nav__link">
+    Solución programada
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#puntos-claves" class="md-nav__link">
+    Puntos Claves
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -528,6 +542,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#solucion-programada" class="md-nav__link">
+    Solución programada
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#puntos-claves" class="md-nav__link">
+    Puntos Claves
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -609,6 +637,85 @@
 <p>La técnica que se utiliza para resolver el algoritmo de Knuth-Morris-Pratt es la técnica de búsqueda de cadenas. Esta técnica se utiliza para buscar una cadena de texto dentro de otra cadena de texto y se basa en la comparación de patrones.</p>
 <p>En particular, el algoritmo de Knuth-Morris-Pratt utiliza una técnica llamada búsqueda de patrones en tiempo lineal, que busca el patrón en la cadena de texto en tiempo O(n+m), donde n es el tamaño de la cadena de texto y m es el tamaño del patrón. Esto es mucho más rápido que los algoritmos de búsqueda de patrones ingenuos que buscan el patrón comparando todas las subcadenas de la cadena de texto, lo que puede tomar tiempo O(n*m).</p>
 <p>La técnica de búsqueda de cadenas es muy útil en muchas aplicaciones, como la búsqueda de palabras clave en un motor de búsqueda, la búsqueda de patrones en un archivo de texto o la búsqueda de subcadenas en una base de datos. En general, esta técnica se utiliza cuando se necesita buscar un patrón específico dentro de una gran cantidad de datos y se necesita hacerlo de manera eficiente.</p>
+<h2 id="solucion-programada">Solución programada</h2>
+<p>Implementación en Java del algoritmo de Knuth-Morris-Pratt para buscar un patrón en una cadena de texto:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">KnuthMorrisPratt</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pattern</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">prefixTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">computePrefixTable</span><span class="p">(</span><span class="n">pattern</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="na">length</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">j</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">                </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">                </span><span class="n">j</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">length</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">                </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prefixTable</span><span class="o">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">                </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="nf">computePrefixTable</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">pattern</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">prefixTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">pattern</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">j</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">                </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prefixTable</span><span class="o">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pattern</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">j</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">                </span><span class="n">j</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">            </span><span class="n">prefixTable</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">prefixTable</span><span class="p">;</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abacadabrabracabracadabrabrabracad&quot;</span><span class="p">;</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abracadabra&quot;</span><span class="p">;</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">search</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="p">);</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El patrón no se encontró en la cadena.&quot;</span><span class="p">);</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El patrón se encontró en la posición &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; de la cadena.&quot;</span><span class="p">);</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>En esta implementación, el método <code>search</code> recibe dos cadenas de texto: <code>text</code>, que es la cadena en la que se busca el patrón, y <code>pattern</code>, que es el patrón que se busca. El método utiliza el algoritmo de Knuth-Morris-Pratt para buscar el patrón en la cadena y devuelve la posición en la que se encuentra el patrón en la cadena, o -1 si el patrón no se encuentra.</p>
+<p>El método <code>computePrefixTable</code> se encarga de construir la tabla de prefijo necesaria para el algoritmo de KMP. Este método utiliza un enfoque de "barrido" para comparar el patrón consigo mismo y construir la tabla de prefijo.</p>
+<p>En el método <code>search</code>, se utiliza la tabla de prefijo para evitar volver a comprobar subcadenas que ya se han comprobado. El método utiliza dos índices <code>i</code> y <code>j</code> para recorrer la cadena de texto y el patrón, respectivamente. Si los caracteres en <code>i</code> y <code>j</code> son iguales, se avanzan ambos índices. Si hay una discrepancia y <code>j</code> no es cero, se salta a la posición indicada en la tabla de prefijo. Si <code>j</code> es cero, se avanza <code>i</code>.</p>
+<p>Finalmente, en el método <code>main</code>, se utiliza la implementación del algoritmo para buscar el patrón "abracadabra" en la cadena de texto "abacadabrabracabracadabrabrabracad". En este ejemplo, el patrón se encuentra en la posición 14 de la cadena de texto.</p>
+<h2 id="puntos-claves">Puntos Claves</h2>
+<p>El algoritmo Knuth-Morris-Pratt (KMP) es un algoritmo eficiente para la búsqueda de patrones de texto, que permite encontrar todas las ocurrencias de una cadena de patrones en una cadena de texto. A continuación, se ofrecen algunos consejos para implementar y utilizar el algoritmo KMP:</p>
+<ol>
+<li>
+<p>Entender el problema de la búsqueda de patrones: Antes de implementar el algoritmo KMP, asegúrese de comprender completamente el problema de la búsqueda de patrones y cómo el algoritmo aborda este problema de manera eficiente en comparación con otros algoritmos, como la búsqueda de fuerza bruta.</p>
+</li>
+<li>
+<p>Estudiar la construcción de la tabla de fallos: El algoritmo KMP utiliza una tabla de fallos (también llamada tabla de prefijos) para evitar la necesidad de retroceder en la cadena de texto durante la búsqueda. Asegúrese de comprender cómo se construye esta tabla y cómo se utiliza para optimizar la búsqueda de patrones.</p>
+</li>
+<li>
+<p>Implementar el algoritmo paso a paso: Desglose el algoritmo KMP en sus componentes principales: la construcción de la tabla de fallos y la búsqueda del patrón. Implemente cada componente de manera clara y estructurada, utilizando variables y funciones con nombres descriptivos.</p>
+</li>
+<li>
+<p>Utilizar ejemplos para verificar la implementación: Asegúrese de probar su implementación del algoritmo KMP con varios ejemplos de cadenas de texto y patrones, incluidos casos límite y casos en los que el patrón no aparece en el texto. Esto le ayudará a identificar posibles errores y a asegurarse de que su implementación funciona correctamente.</p>
+</li>
+<li>
+<p>Optimizar la implementación: Si bien el algoritmo KMP es eficiente por diseño, es posible que haya margen para optimizar su implementación en términos de rendimiento y uso de memoria. Por ejemplo, puede utilizar estructuras de datos más eficientes o simplificar el código para mejorar la velocidad de ejecución.</p>
+</li>
+<li>
+<p>Aplicar el algoritmo KMP a problemas reales: Una vez que tenga una implementación sólida y bien probada del algoritmo KMP, busque oportunidades para aplicarlo a problemas reales, como la búsqueda de patrones en conjuntos de datos grandes o la detección de secuencias en bioinformática.</p>
+</li>
+<li>
+<p>Comparar con otros algoritmos de búsqueda de patrones: Aunque el algoritmo KMP es eficiente, puede ser útil compararlo con otros algoritmos de búsqueda de patrones, como el algoritmo de Boyer-Moore o el algoritmo de Rabin-Karp, para determinar cuál es el más adecuado para su caso de uso específico.</p>
+</li>
+</ol>
 
 
 
