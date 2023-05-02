@@ -637,8 +637,15 @@
 <p>La técnica que se utiliza para resolver el algoritmo de Knuth-Morris-Pratt es la técnica de búsqueda de cadenas. Esta técnica se utiliza para buscar una cadena de texto dentro de otra cadena de texto y se basa en la comparación de patrones.</p>
 <p>En particular, el algoritmo de Knuth-Morris-Pratt utiliza una técnica llamada búsqueda de patrones en tiempo lineal, que busca el patrón en la cadena de texto en tiempo O(n+m), donde n es el tamaño de la cadena de texto y m es el tamaño del patrón. Esto es mucho más rápido que los algoritmos de búsqueda de patrones ingenuos que buscan el patrón comparando todas las subcadenas de la cadena de texto, lo que puede tomar tiempo O(n*m).</p>
 <p>La técnica de búsqueda de cadenas es muy útil en muchas aplicaciones, como la búsqueda de palabras clave en un motor de búsqueda, la búsqueda de patrones en un archivo de texto o la búsqueda de subcadenas en una base de datos. En general, esta técnica se utiliza cuando se necesita buscar un patrón específico dentro de una gran cantidad de datos y se necesita hacerlo de manera eficiente.</p>
+<details>
+<summary>Ver Solución</summary>
 <h2 id="solucion-programada">Solución programada</h2>
 <p>Implementación en Java del algoritmo de Knuth-Morris-Pratt para buscar un patrón en una cadena de texto:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">KnuthMorrisPratt</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pattern</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -716,6 +723,7 @@
 <p>Comparar con otros algoritmos de búsqueda de patrones: Aunque el algoritmo KMP es eficiente, puede ser útil compararlo con otros algoritmos de búsqueda de patrones, como el algoritmo de Boyer-Moore o el algoritmo de Rabin-Karp, para determinar cuál es el más adecuado para su caso de uso específico.</p>
 </li>
 </ol>
+</details>
 
 
 
@@ -726,6 +734,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
         </div>
         
       </main>
@@ -795,7 +805,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.footer", "header.autohide", "content.code.annotate", "content.code.select", "content.code.copy", "content.action.edit", "search.share"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.footer", "header.autohide", "content.code.annotate", "content.code.select", "content.code.copy", "content.action.edit", "search.share", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
