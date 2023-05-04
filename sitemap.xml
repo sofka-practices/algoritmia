@@ -2,52 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://sofka-practices.github.io/algoritmia/</loc>
-         <lastmod>2023-05-03</lastmod>
+         <lastmod>2023-05-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sofka-practices.github.io/algoritmia/preguntas/</loc>
-         <lastmod>2023-05-03</lastmod>
+         <lastmod>2023-05-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sofka-practices.github.io/algoritmia/teoria/</loc>
-         <lastmod>2023-05-03</lastmod>
+         <lastmod>2023-05-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sofka-practices.github.io/algoritmia/dia/02/</loc>
-         <lastmod>2023-05-03</lastmod>
+         <lastmod>2023-05-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sofka-practices.github.io/algoritmia/dia/03/</loc>
-         <lastmod>2023-05-03</lastmod>
+         <lastmod>2023-05-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sofka-practices.github.io/algoritmia/dia/04/</loc>
+         <lastmod>2023-05-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sofka-practices.github.io/algoritmia/dia/24/</loc>
-         <lastmod>2023-05-03</lastmod>
+         <lastmod>2023-05-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sofka-practices.github.io/algoritmia/dia/25/</loc>
-         <lastmod>2023-05-03</lastmod>
+         <lastmod>2023-05-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sofka-practices.github.io/algoritmia/dia/26/</loc>
-         <lastmod>2023-05-03</lastmod>
+         <lastmod>2023-05-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sofka-practices.github.io/algoritmia/dia/27/</loc>
-         <lastmod>2023-05-03</lastmod>
+         <lastmod>2023-05-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sofka-practices.github.io/algoritmia/dia/28/</loc>
-         <lastmod>2023-05-03</lastmod>
+         <lastmod>2023-05-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

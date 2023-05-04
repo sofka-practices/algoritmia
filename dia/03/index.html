@@ -14,6 +14,8 @@
         <link rel="prev" href="../02/">
       
       
+        <link rel="next" href="../04/">
+      
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
@@ -410,6 +412,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#solucion-programada" class="md-nav__link">
+    Solución Programada
+  </a>
+  
+    <nav class="md-nav" aria-label="Solución Programada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolviendolo-con-stack" class="md-nav__link">
+    Resolviendolo con stack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolviendo-con-programacion-dinamica" class="md-nav__link">
+    Resolviendo con programación dinamica
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recomendaciones" class="md-nav__link">
+    Recomendaciones
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -425,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04.md" class="md-nav__link">
+      <a href="../04/" class="md-nav__link">
         Mayo 04
       </a>
     </li>
@@ -500,6 +536,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#solucion-programada" class="md-nav__link">
+    Solución Programada
+  </a>
+  
+    <nav class="md-nav" aria-label="Solución Programada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolviendolo-con-stack" class="md-nav__link">
+    Resolviendolo con stack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolviendo-con-programacion-dinamica" class="md-nav__link">
+    Resolviendo con programación dinamica
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recomendaciones" class="md-nav__link">
+    Recomendaciones
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -565,6 +635,143 @@
 </code></pre></div>
 <p>En este caso, podemos ver que el rectángulo más grande que se puede formar dentro del parque está compuesto por las barras 4, 5 y 6 del histograma, que representan las alturas de los edificios en la parte trasera del parque. La altura del rectángulo es de 6 unidades (la altura de la barra más baja), y su ancho es de 3 unidades (el número de barras adyacentes). Por lo tanto, el área del rectángulo más grande que se puede formar dentro del parque es de 18 unidades (6 x 3).</p>
 <p>Con esta información, puedes diseñar el parque de manera que maximice su superficie. Por ejemplo, puedes colocar áreas verdes en la parte delantera del parque, donde los edificios son más bajos, y reservar la parte trasera del parque para áreas de recreación más grandes, donde los edificios son más altos.</p>
+<details>
+<summary>Ver Solución</summary>
+<h2 id="solucion-programada">Solución Programada</h2>
+<h3 id="resolviendolo-con-stack">Resolviendolo con stack</h3>
+<p>A continuación te muestro cómo resolver el problema del "Largest Rectangle in a Histogram" en Java utilizando una pila para implementar el algoritmo, usando la técnica llamada "stack" o "pila".</p>
+<p>La técnica de "stack" o "pila" es una técnica común en la programación que se utiliza para resolver una variedad de problemas en los que se requiere manipulación de datos en una estructura de tipo "último en entrar, primero en salir" (LIFO, por sus siglas en inglés). En esta técnica, se utiliza una estructura de datos llamada pila para almacenar elementos, y se realizan operaciones para agregar o eliminar elementos de la pila.</p>
+<p>La pila es una estructura de datos que se puede visualizar como una torre de objetos apilados unos sobre otros. El objeto en la parte superior de la pila es el último en haber sido agregado, y es el primero en ser eliminado. Las operaciones básicas que se pueden realizar en una pila son las siguientes:</p>
+<ul>
+<li>Push: agregar un elemento a la parte superior de la pila.</li>
+<li>Pop: eliminar el elemento en la parte superior de la pila.</li>
+<li>Peek: obtener el valor del elemento en la parte superior de la pila sin eliminarlo.</li>
+<li>isEmpty: verificar si la pila está vacía.</li>
+</ul>
+<p>La técnica de "stack" o "pila" se utiliza en una variedad de algoritmos de programación, como la validación de expresiones matemáticas, el recorrido de árboles, la resolución de problemas de laberintos, la evaluación de expresiones posfijas y la búsqueda de componentes fuertemente conectados en grafos, entre otros.</p>
+<p>En general, la técnica de "stack" o "pila" es muy útil para manejar problemas que requieren un seguimiento temporal de los datos. Al utilizar una pila, es posible mantener un registro temporal de los datos en una estructura de tipo LIFO que permite una manipulación eficiente y efectiva de los mismos.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LargestRectangleInHistogram</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">largestRectangleArea</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">heights</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">maxArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">heights</span><span class="p">.</span><span class="na">length</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">heights</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">heights</span><span class="o">[</span><span class="n">stack</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">                </span><span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="p">);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heights</span><span class="o">[</span><span class="n">top</span><span class="o">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">stack</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">                </span><span class="n">maxArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxArea</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="p">);</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heights</span><span class="o">[</span><span class="n">top</span><span class="o">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">stack</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="n">maxArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxArea</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="p">);</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">maxArea</span><span class="p">;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">heights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">maxArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">largestRectangleArea</span><span class="p">(</span><span class="n">heights</span><span class="p">);</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El área del rectángulo más grande en el histograma es: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">maxArea</span><span class="p">);</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>En este ejemplo, el método <code>largestRectangleArea</code> recibe como entrada un arreglo de enteros <code>heights</code> que representa el histograma de alturas de las barras, y devuelve un entero que representa el área del rectángulo más grande que se puede formar a partir de las barras adyacentes en el histograma.</p>
+<p>El algoritmo se implementa utilizando una pila <code>stack</code> para mantener un registro de las barras que forman el rectángulo más grande hasta el momento. Se recorre el arreglo <code>heights</code> una vez, y para cada barra se hace lo siguiente:</p>
+<ul>
+<li>Si la pila está vacía o la altura de la barra actual es mayor o igual que la altura de la última barra en la pila, se agrega la posición actual <code>i</code> a la pila y se incrementa <code>i</code>.</li>
+<li>Si la altura de la barra actual es menor que la altura de la última barra en la pila, se van sacando las barras de la pila hasta que se encuentra una barra que sea menor o igual en altura a la barra actual. En cada paso, se calcula el área del rectángulo formado por la altura de la barra sacada de la pila multiplicada por el ancho del rectángulo, que es la posición actual <code>i</code> menos la posición del índice de la barra que quedó en la pila. Se actualiza el valor del máximo de las áreas encontradas <code>maxArea</code>.</li>
+<li>Se repite el paso anterior hasta que se hayan examinado todas las barras del histograma.</li>
+</ul>
+<p>Finalmente, si aún quedan barras en la pila, se repite el procedimiento para calcular el área del rectángulo más grande formado por esas barras.</p>
+<p>En el método <code>main</code> se crea un arreglo <code>heights</code> como ejemplo, se llama al método <code>largestRectangleArea</code> para encontrar el área del rectángulo más grande en el histograma, y se imprime el resultado en la consola. El resultado para este ejemplo es 10, que corresponde al área del rectángulo formado por las barras de altura 5 y 6.</p>
+<p>Este es un ejemplo básico de cómo se puede implementar el algoritmo "Largest Rectangle in a Histogram" en Java. Por supuesto, se pueden realizar ajustes y optimizaciones según las necesidades específicas de cada caso.</p>
+<h2 id="resolviendo-con-programacion-dinamica">Resolviendo con programación dinamica</h2>
+<p>Aunque el algoritmo "Largest Rectangle in a Histogram" se resuelve típicamente con una técnica de pila (stack), también se puede resolver con programación dinámica.</p>
+<p>La idea es utilizar dos arreglos para almacenar información sobre el área de los rectángulos más grandes que se pueden formar en la izquierda y derecha de cada barra del histograma. Para cada barra i, se calcula la posición j más a la izquierda donde la altura de las barras es menor o igual a la altura de la barra i. De manera similar, se calcula la posición k más a la derecha donde la altura de las barras es menor o igual a la altura de la barra i. A partir de estas dos posiciones, se puede calcular el área del rectángulo más grande que se puede formar con la barra i.</p>
+<p>La ecuación de recurrencia para el cálculo del área del rectángulo más grande con la barra i se puede escribir de la siguiente manera:</p>
+<p>area[i] = heights[i] * (right[i] - left[i] - 1)</p>
+<p>Donde heights[i] es la altura de la barra i, left[i] es la posición más a la izquierda donde la altura de las barras es menor o igual a heights[i], y right[i] es la posición más a la derecha donde la altura de las barras es menor o igual a heights[i].</p>
+<p>El área del rectángulo más grande en el histograma se puede obtener encontrando el valor máximo en el arreglo de áreas.</p>
+<p>Aquí hay un ejemplo de implementación del algoritmo "Largest Rectangle in a Histogram" con programación dinámica en Java:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">largestRectangleArea</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">heights</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heights</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">left</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">right</span><span class="o">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">heights</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">heights</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="n">left</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">heights</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">heights</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">            </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">right</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">        </span><span class="n">right</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">maxArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heights</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">right</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">left</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">        </span><span class="n">maxArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxArea</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="p">);</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">maxArea</span><span class="p">;</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>En este ejemplo, los arreglos left y right se calculan utilizando dos ciclos while anidados. En la línea 6 se inicializa left[0] con un valor de -1 y en la línea 7 se inicializa right[n-1] con un valor de n, que representa el límite derecho del arreglo.</p>
+<p>En el primer ciclo for (línea 9), se calcula el valor de left[i] para cada barra i, utilizando el valor de left[j] como punto de partida y moviéndose hacia la izquierda hasta encontrar una barra cuya altura sea menor que la altura de la barra i.</p>
+<p>En el segundo ciclo for (línea 15), se calcula el valor de right[i] para cada barra i, utilizando el valor de right[j] como punto de partida y moviéndose hacia la derecha hasta encontrar una barra cuya altura sea menor que la altura de la barra i.</p>
+<p>Finalmente, en el tercer ciclo for (línea 21), se calcula el área del rectángulo más grande para cada barra i y se actualiza el valor máximo de las áreas encontradas en la variable maxArea.</p>
+<p>El resultado de la función es el área del rectángulo más grande en el histograma.</p>
+<p>En general, la programación dinámica es una técnica muy útil en la resolución de problemas de optimización. En el caso del algoritmo "Largest Rectangle in a Histogram", la programación dinámica nos permite calcular el área del rectángulo más grande en el histograma de manera eficiente, al aprovechar la información almacenada en los arreglos left y right para evitar cálculos innecesarios y reducir el tiempo de ejecución del algoritmo.</p>
+<h2 id="recomendaciones">Recomendaciones</h2>
+<p>Aquí te dejo algunas recomendaciones para resolver el algoritmo "Largest Rectangle in a Histogram":</p>
+<ol>
+<li>
+<p>Comprender el problema: antes de comenzar a resolver el problema, es importante comprender bien en qué consiste el problema del "Largest Rectangle in a Histogram". Revisa cuidadosamente la descripción del problema y asegúrate de que entiendes qué se espera de la solución.</p>
+</li>
+<li>
+<p>Analizar las posibles soluciones: el algoritmo "Largest Rectangle in a Histogram" se puede resolver utilizando diferentes técnicas, como la técnica de pila (stack) o la programación dinámica. Analiza las diferentes opciones y elige la que mejor se adapte a tus conocimientos y habilidades.</p>
+</li>
+<li>
+<p>Planificar la solución: antes de empezar a escribir código, planifica tu solución. Decide qué estructuras de datos vas a utilizar, cómo vas a implementar el algoritmo y cómo vas a manejar los casos especiales.</p>
+</li>
+<li>
+<p>Implementar la solución: una vez que has planificado tu solución, es momento de implementarla en código. Asegúrate de seguir las mejores prácticas de programación, como utilizar nombres de variables descriptivos, agregar comentarios para explicar el código y utilizar buenas técnicas de programación para evitar errores.</p>
+</li>
+<li>
+<p>Probar la solución: una vez que has implementado la solución, es importante probarla con diferentes casos de prueba para asegurarte de que funciona correctamente. Prueba con diferentes tamaños de histogramas y diferentes valores de altura de las barras para verificar que la solución es correcta y eficiente.</p>
+</li>
+<li>
+<p>Optimizar la solución: si encuentras que tu solución no es lo suficientemente eficiente para resolver el problema en tiempo y espacio razonable, considera realizar algunas optimizaciones. Esto puede incluir el uso de estructuras de datos más eficientes o la reducción del número de cálculos que se realizan en el algoritmo.</p>
+</li>
+</ol>
+<p>Siguiendo estas recomendaciones, deberías poder resolver el problema del "Largest Rectangle in a Histogram" de manera efectiva y eficiente.</p>
+</details>
 
 
 
@@ -602,6 +809,21 @@
             </div>
           </a>
         
+        
+          
+          <a href="../04/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Mayo 04" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Siguiente
+                </span>
+                Mayo 04
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
